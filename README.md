@@ -5,4 +5,6 @@ this is a server with my bunker script, my debug window script, ej's and dex's e
 
 
 
-#please make a new branch to make changes/additions
+#please note there are multiple branches 
+
+#please keep this one as a "fresh" server

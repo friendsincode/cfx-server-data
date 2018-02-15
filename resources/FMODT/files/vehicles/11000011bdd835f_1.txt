@@ -1,0 +1,1 @@
+Coquette BlackFin,784565758,1,0,1,28,0,0,67,51,252,7,4,-1,false,1,1,1,1,-1,2,3,-1,2,0,-1,0,2,-1,-1,-1,1,-1,false,false,false,false,255,0,255,5,ANALSWAG,-1,-1,1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,1,1,172,1,188,172,1,188,-1,-1,false,true,false,false,false,false,false,false,false,false,false,false,false,false

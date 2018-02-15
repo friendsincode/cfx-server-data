@@ -1,4 +1,4 @@
-# fresh server 
+# hank's 4X4 server
 
 this is a server for hank's 4X4 off road missions 
 

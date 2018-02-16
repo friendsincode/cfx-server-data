@@ -126,6 +126,13 @@ local Vehicle_1 = {['xPos'] = Garage_1_Slot_1['xPos'], ['yPos'] = Garage_1_Slot_
 local Vehicle_2 = {['xPos'] = Garage_2_Slot_1['xPos'], ['yPos'] = Garage_2_Slot_1['yPos']}
 
 
+local MoveGar_1_Slot_1Texture = false
+local MoveGar_1_Slot_2Texture = false
+local MoveGar_1_Slot_3Texture = false
+local MoveGar_2_Slot_1Texture = false
+local MoveGar_2_Slot_2Texture = false
+local MoveGar_2_Slot_3Texture = false
+
 
 
 --[[*************************************************************]]
@@ -537,7 +544,9 @@ Citizen.CreateThread(function()
 	 end
 	   if (mouseX >= Garage_1_Slot_1.leftEdge and mouseX <= Garage_1_Slot_1.rightEdge) and (mouseY >= Garage_1_Slot_1.topEdge and mouseY <= Garage_1_Slot_1.bottomEdge) then
 	    Gar_1_Slot_1 = true
-	    DrawSprite("shared", "bggradient", Garage_1_Slot_1.xPos, Garage_1_Slot_1.yPos, 0.1, 0.1, 0.0, 255, 0, 255, 150)
+		if not Garage_1_OccupiedSlots[1]["STATE"] then
+	     DrawSprite("shared", "bggradient", Garage_1_Slot_1.xPos, Garage_1_Slot_1.yPos, 0.1, 0.1, 0.0, 255, 0, 255, 150)
+		end
 	   else
 	    Gar_1_Slot_1 = false
 	   end
@@ -550,7 +559,9 @@ Citizen.CreateThread(function()
 	 end
 	   if (mouseX >= Garage_1_Slot_2.leftEdge and mouseX <= Garage_1_Slot_2.rightEdge) and (mouseY >= Garage_1_Slot_2.topEdge and mouseY <= Garage_1_Slot_2.bottomEdge) then
 	    Gar_1_Slot_2 = true
-	    DrawSprite("shared", "bggradient", Garage_1_Slot_2.xPos, Garage_1_Slot_2.yPos, 0.1, 0.1, 0.0, 255, 0, 255, 150)
+		if not Garage_1_OccupiedSlots[2]["STATE"] then
+	     DrawSprite("shared", "bggradient", Garage_1_Slot_2.xPos, Garage_1_Slot_2.yPos, 0.1, 0.1, 0.0, 255, 0, 255, 150)
+		end
 	   else
 	    Gar_1_Slot_2 = false
 	   end
@@ -563,7 +574,9 @@ Citizen.CreateThread(function()
 	 end
 	   if (mouseX >= Garage_1_Slot_3.leftEdge and mouseX <= Garage_1_Slot_3.rightEdge) and (mouseY >= Garage_1_Slot_3.topEdge and mouseY <= Garage_1_Slot_3.bottomEdge) then
 	    Gar_1_Slot_3 = true
-	    DrawSprite("shared", "bggradient", Garage_1_Slot_3.xPos, Garage_1_Slot_3.yPos, 0.1, 0.1, 0.0, 255, 0, 255, 150)
+		if not Garage_1_OccupiedSlots[3]["STATE"] then
+	     DrawSprite("shared", "bggradient", Garage_1_Slot_3.xPos, Garage_1_Slot_3.yPos, 0.1, 0.1, 0.0, 255, 0, 255, 150)
+		end
 	   else
 	    Gar_1_Slot_3 = false
 	   end
@@ -583,7 +596,9 @@ Citizen.CreateThread(function()
 	 end
 	   if (mouseX >= Garage_2_Slot_1.leftEdge and mouseX <= Garage_2_Slot_1.rightEdge) and (mouseY >= Garage_2_Slot_1.topEdge and mouseY <= Garage_2_Slot_1.bottomEdge) then
 	    Gar_2_Slot_1 = true
-	    DrawSprite("shared", "bggradient", Garage_2_Slot_1.xPos, Garage_2_Slot_1.yPos, 0.1, 0.1, 0.0, 255, 0, 255, 150)
+		if not Garage_2_OccupiedSlots[1]["STATE"] then
+	     DrawSprite("shared", "bggradient", Garage_2_Slot_1.xPos, Garage_2_Slot_1.yPos, 0.1, 0.1, 0.0, 255, 0, 255, 150)
+		end
 	   else
 	    Gar_2_Slot_1 = false
 	   end	 
@@ -596,7 +611,9 @@ Citizen.CreateThread(function()
 	 end
 	   if (mouseX >= Garage_2_Slot_2.leftEdge and mouseX <= Garage_2_Slot_2.rightEdge) and (mouseY >= Garage_2_Slot_2.topEdge and mouseY <= Garage_2_Slot_2.bottomEdge) then
 	    Gar_2_Slot_2 = true
-	    DrawSprite("shared", "bggradient", Garage_2_Slot_2.xPos, Garage_2_Slot_2.yPos, 0.1, 0.1, 0.0, 255, 0, 255, 150)
+		if not Garage_2_OccupiedSlots[2]["STATE"] then
+	     DrawSprite("shared", "bggradient", Garage_2_Slot_2.xPos, Garage_2_Slot_2.yPos, 0.1, 0.1, 0.0, 255, 0, 255, 150)
+		end
 	   else
 	    Gar_2_Slot_2 = false
 	   end	 
@@ -610,6 +627,9 @@ Citizen.CreateThread(function()
 	   if (mouseX >= Garage_2_Slot_3.leftEdge and mouseX <= Garage_2_Slot_3.rightEdge) and (mouseY >= Garage_2_Slot_3.topEdge and mouseY <= Garage_2_Slot_3.bottomEdge) then
 	    Gar_2_Slot_3 = true
 	    DrawSprite("shared", "bggradient", Garage_2_Slot_3.xPos, Garage_2_Slot_3.yPos, 0.1, 0.1, 0.0, 255, 0, 255, 150)
+		if not Garage_2_OccupiedSlots[3]["STATE"] then
+	     DrawSprite("shared", "bggradient", Garage_2_Slot_3.xPos, Garage_2_Slot_3.yPos, 0.1, 0.1, 0.0, 255, 0, 255, 150)
+		end
 	   else
 	    Gar_2_Slot_3 = false
 	   end
@@ -621,48 +641,49 @@ Citizen.CreateThread(function()
 ---------------------------garage 1 slot 1----------------------------------------------------
 ----------------------------------------------------------------------------------------------
 	   if Gar_1_Slot_1 and Garage_1_OccupiedSlots[1]["STATE"] then
-	    if IsControlJustPressed(2, 237) then
-		 MoveTexture = true
+	    if IsControlJustReleased(2, 237) then
+		 MoveGar_1_Slot_1Texture = not MoveGar_1_Slot_1Texture
+		 
 		end
 	   end
 ----------------------------------------------------------------------------------------------	  
 ---------------------------garage 1 slot 2----------------------------------------------------
 ----------------------------------------------------------------------------------------------
 	   if Gar_1_Slot_2 and Garage_1_OccupiedSlots[2]["STATE"] then
-	    if IsControlJustPressed(2, 237) then
-		 MoveTexture = true
+	    if IsControlJustReleased(2, 237) then
+		 MoveGar_1_Slot_2Texture = not MoveGar_1_Slot_2Texture
 		end
 	   end
 ----------------------------------------------------------------------------------------------	  
 ---------------------------garage 1 slot 3----------------------------------------------------
 ----------------------------------------------------------------------------------------------
 	   if Gar_1_Slot_3 and Garage_1_OccupiedSlots[3]["STATE"] then
-	    if IsControlJustPressed(2, 237) then
-		 MoveTexture = true
+	    if IsControlJustReleased(2, 237) then
+		 MoveGar_1_Slot_3Texture = not MoveGar_1_Slot_3Texture
 		end
 	   end
 ----------------------------------------------------------------------------------------------	  
 ---------------------------garage 2 slot 1----------------------------------------------------
 ----------------------------------------------------------------------------------------------
 	   if Gar_2_Slot_1 and Garage_2_OccupiedSlots[1]["STATE"] then
-	    if IsControlJustPressed(2, 237) then
-		 MoveTexture = true
+	    if IsControlJustReleased(2, 237) then
+		 MoveGar_2_Slot_1Texture = not MoveGar_2_Slot_1Texture
 		end
 	   end
 ----------------------------------------------------------------------------------------------	  
 ---------------------------garage 2 slot 2----------------------------------------------------
 ----------------------------------------------------------------------------------------------
 	   if Gar_2_Slot_2 and Garage_2_OccupiedSlots[2]["STATE"] then
-	    if IsControlJustPressed(2, 237) then
-		 MoveTexture = true
+	    if IsControlJustReleased(2, 237) then
+		 MoveGar_2_Slot_2Texture = not MoveGar_2_Slot_2Texture
 		end
 	   end
 ----------------------------------------------------------------------------------------------	  
 ---------------------------garage 2 slot 3----------------------------------------------------
 ----------------------------------------------------------------------------------------------	   
 	   if Gar_2_Slot_3 and Garage_2_OccupiedSlots[3]["STATE"] then
-	    if IsControlJustPressed(2, 237) then
-		 MoveTexture = true
+	    if IsControlJustReleased(2, 237) then
+		 MoveGar_2_Slot_3Texture = not MoveGar_2_Slot_3Texture
 		end
 	   end
 	   
@@ -670,15 +691,13 @@ Citizen.CreateThread(function()
 ---------------------------garage 1 slot 1----------------------------------------------------
 ----------------------------------------------------------------------------------------------
 	   if Garage_1_OccupiedSlots[1]["STATE"] then
-	    if MoveTexture then
-		
-	    Vehicle_1.xPos = mouseX
-		Vehicle_1.yPos = mouseY
+	    if MoveGar_1_Slot_1Texture then		
+	    Vehicle_1_1X = mouseX
+		Vehicle_1_1Y = mouseY
 	     if Gar_1_Slot_2 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
-		    Vehicle_1.xPos = Garage_1_Slot_2.xPos 
-			Vehicle_1.yPos = Garage_1_Slot_2.yPos
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_1_Slot_1Texture = false
+		  if not Garage_1_OccupiedSlots[2]["STATE"] then
 			Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"]
 			Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"]
 			Garage_1_OccupiedSlots[1]["STATE"] = false
@@ -686,13 +705,22 @@ Citizen.CreateThread(function()
 			Garage_1_OccupiedSlots[2]["STATE"] = true
 			Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"] = ""
 			Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"] = ""
+		   else
+	local temp = {Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"], Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"]}
+			 
+			Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"]
+			Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"]
+				
+			Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"] = temp[1]
+			Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"] = temp[2]		   
+		   end
 		  end
 	     end
+		 
 	     if Gar_1_Slot_3 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
-		    Vehicle_1.xPos = Garage_1_Slot_3.xPos 
-			Vehicle_1.yPos = Garage_1_Slot_3.yPos
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_1_Slot_1Texture = false
+		   if not Garage_1_OccupiedSlots[3]["STATE"] then
 			Garage_1_OccupiedSlots[3]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"]
 			Garage_1_OccupiedSlots[3]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"]
 			Garage_1_OccupiedSlots[1]["STATE"] = false
@@ -700,13 +728,21 @@ Citizen.CreateThread(function()
 			Garage_1_OccupiedSlots[3]["STATE"] = true
 			Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"] = ""
 			Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"] = ""
+		   else
+	local temp = {Garage_1_OccupiedSlots[3]["MODEL"]["MODEL"], Garage_1_OccupiedSlots[3]["MODEL"]["MODELDICT"]}
+			 
+			Garage_1_OccupiedSlots[3]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"]
+			Garage_1_OccupiedSlots[3]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"]
+				
+			Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"] = temp[1]
+			Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"] = temp[2]		   
+		   end	
 		  end
 	     end
 	     if Gar_2_Slot_1 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
-		    Vehicle_2.xPos = Garage_2_Slot_1.xPos 
-			Vehicle_2.yPos = Garage_2_Slot_1.yPos
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_1_Slot_1Texture = false
+		   if not Garage_2_OccupiedSlots[1]["STATE"] then
 			Garage_2_OccupiedSlots[1]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"]
 			Garage_2_OccupiedSlots[1]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"]
 			Garage_1_OccupiedSlots[1]["STATE"] = false
@@ -714,13 +750,21 @@ Citizen.CreateThread(function()
 			Garage_2_OccupiedSlots[1]["STATE"] = true
 			Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"] = ""
 			Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"] = ""
+		   else
+	local temp = {Garage_2_OccupiedSlots[1]["MODEL"]["MODEL"], Garage_2_OccupiedSlots[1]["MODEL"]["MODELDICT"]}
+			 
+			Garage_2_OccupiedSlots[1]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"]
+			Garage_2_OccupiedSlots[1]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"]
+				
+			Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"] = temp[1]
+			Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"] = temp[2]		   
+		   end
 		  end
 	     end
 	     if Gar_2_Slot_2 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
-		    Vehicle_2.xPos = Garage_2_Slot_2.xPos 
-			Vehicle_2.yPos = Garage_2_Slot_2.yPos
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_1_Slot_1Texture = false
+		   if not Garage_2_OccupiedSlots[2]["STATE"] then
 			Garage_2_OccupiedSlots[2]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"]
 			Garage_2_OccupiedSlots[2]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"]
 			Garage_1_OccupiedSlots[1]["STATE"] = false
@@ -728,13 +772,21 @@ Citizen.CreateThread(function()
 			Garage_2_OccupiedSlots[2]["STATE"] = true
 			Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"] = ""
 			Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"] = ""
+		   else
+	local temp = {Garage_2_OccupiedSlots[2]["MODEL"]["MODEL"], Garage_2_OccupiedSlots[2]["MODEL"]["MODELDICT"]}
+			 
+			Garage_2_OccupiedSlots[2]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"]
+			Garage_2_OccupiedSlots[2]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"]
+				
+			Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"] = temp[1]
+			Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"] = temp[2]		   
+		   end
 		  end
 	     end
 	     if Gar_2_Slot_3 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
-		    Vehicle_2.xPos = Garage_2_Slot_3.xPos 
-			Vehicle_2.yPos = Garage_2_Slot_3.yPos
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_1_Slot_1Texture = false
+		   if not Garage_2_OccupiedSlots[3]["STATE"] then
 			Garage_2_OccupiedSlots[3]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"]
 			Garage_2_OccupiedSlots[3]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"]
 			Garage_1_OccupiedSlots[1]["STATE"] = false
@@ -742,25 +794,36 @@ Citizen.CreateThread(function()
 			Garage_2_OccupiedSlots[3]["STATE"] = true
 			Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"] = ""
 			Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"] = ""
+		   else
+	local temp = {Garage_2_OccupiedSlots[3]["MODEL"]["MODEL"], Garage_2_OccupiedSlots[3]["MODEL"]["MODELDICT"]}
+			 
+			Garage_2_OccupiedSlots[3]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"]
+			Garage_2_OccupiedSlots[3]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"]
+				
+			Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"] = temp[1]
+			Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"] = temp[2]
+		   end
 		  end
 	     end
+		else
+		 Vehicle_1_1X = Garage_1_Slot_1.xPos
+		 Vehicle_1_1Y = Garage_1_Slot_1.yPos
 		end
-	    DrawSprite(Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"], Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"], Vehicle_1.xPos, Vehicle_1.yPos, 0.1, 0.1, 0.0, 255, 255, 255, 255) 
+	    DrawSprite(Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"], Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"], Vehicle_1_1X, Vehicle_1_1Y, 0.1, 0.1, 0.0, 255, 255, 255, 255) 
 	   end
 ----------------------------------------------------------------------------------------------	  
 ---------------------------garage 1 slot 2----------------------------------------------------
 ----------------------------------------------------------------------------------------------	   
 	   if Garage_1_OccupiedSlots[2]["STATE"] then
-	    if MoveTexture then
+	    if MoveGar_1_Slot_2Texture then
          		
-	     Vehicle_1.xPos = mouseX
-		 Vehicle_1.yPos = mouseY
+	     Vehicle_1_2X = mouseX
+		 Vehicle_1_2Y = mouseY
 		 
 	     if Gar_1_Slot_1 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
-		    Vehicle_1.xPos = Garage_1_Slot_1.xPos 
-			Vehicle_1.yPos = Garage_1_Slot_1.yPos
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_1_Slot_2Texture = false
+		   if not Garage_1_OccupiedSlots[1]["STATE"] then
 			Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"]
 			Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"]
 			Garage_1_OccupiedSlots[2]["STATE"] = false
@@ -768,13 +831,21 @@ Citizen.CreateThread(function()
 			Garage_1_OccupiedSlots[1]["STATE"] = true
 			Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"] = ""
 			Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"] = ""
+		   else
+	local temp = {Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"], Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"]}
+			 
+			Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"]
+			Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"]
+				
+			Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"] = temp[1]
+			Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"] = temp[2]		   
+		   end
 		  end
 	     end
 	     if Gar_1_Slot_3 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
-		    Vehicle_1.xPos = Garage_1_Slot_3.xPos 
-			Vehicle_1.yPos = Garage_1_Slot_3.yPos
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_1_Slot_2Texture = false
+		   if not Garage_1_OccupiedSlots[3]["STATE"] then
 			Garage_1_OccupiedSlots[3]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"]
 			Garage_1_OccupiedSlots[3]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"]
 			Garage_1_OccupiedSlots[2]["STATE"] = false
@@ -782,13 +853,21 @@ Citizen.CreateThread(function()
 			Garage_1_OccupiedSlots[3]["STATE"] = true
 			Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"] = ""
 			Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"] = ""
+		   else
+	local temp = {Garage_1_OccupiedSlots[3]["MODEL"]["MODEL"], Garage_1_OccupiedSlots[3]["MODEL"]["MODELDICT"]}
+			 
+			Garage_1_OccupiedSlots[3]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"]
+			Garage_1_OccupiedSlots[3]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"]
+				
+			Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"] = temp[1]
+			Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"] = temp[2]		   
+		   end
 		  end
 	     end
 	     if Gar_2_Slot_1 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
-		    Vehicle_2.xPos = Garage_2_Slot_1.xPos 
-			Vehicle_2.yPos = Garage_2_Slot_1.yPos
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_1_Slot_2Texture = false
+		   if not Garage_2_OccupiedSlots[1]["STATE"] then
 			Garage_2_OccupiedSlots[1]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"]
 			Garage_2_OccupiedSlots[1]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"]
 			Garage_1_OccupiedSlots[2]["STATE"] = false
@@ -796,13 +875,21 @@ Citizen.CreateThread(function()
 			Garage_2_OccupiedSlots[1]["STATE"] = true
 			Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"] = ""
 			Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"] = ""
+		   else
+	local temp = {Garage_2_OccupiedSlots[1]["MODEL"]["MODEL"], Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"]}
+			 
+			Garage_2_OccupiedSlots[1]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"]
+			Garage_2_OccupiedSlots[1]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"]
+				
+			Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"] = temp[1]
+			Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"] = temp[2]		   
+		   end
 		  end
 	     end
 	     if Gar_2_Slot_2 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
-		    Vehicle_2.xPos = Garage_2_Slot_2.xPos 
-			Vehicle_2.yPos = Garage_2_Slot_2.yPos
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_1_Slot_2Texture = false
+		   if not Garage_2_OccupiedSlots[2]["STATE"] then
 			Garage_2_OccupiedSlots[2]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"]
 			Garage_2_OccupiedSlots[2]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"]
 			Garage_1_OccupiedSlots[2]["STATE"] = false
@@ -810,13 +897,21 @@ Citizen.CreateThread(function()
 			Garage_2_OccupiedSlots[2]["STATE"] = true
 			Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"] = ""
 			Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"] = ""
+		   else
+	local temp = {Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"], Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"]}
+			 
+			Garage_2_OccupiedSlots[2]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"]
+			Garage_2_OccupiedSlots[2]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"]
+				
+			Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"] = temp[1]
+			Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"] = temp[2]		   
+		   end
 		  end
 	     end
 	     if Gar_2_Slot_3 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
-		    Vehicle_2.xPos = Garage_2_Slot_3.xPos 
-			Vehicle_2.yPos = Garage_2_Slot_3.yPos
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_1_Slot_2Texture = false
+		   if not Garage_2_OccupiedSlots[3]["STATE"] then
 			Garage_2_OccupiedSlots[3]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"]
 			Garage_2_OccupiedSlots[3]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"]
 			Garage_1_OccupiedSlots[2]["STATE"] = false
@@ -824,23 +919,33 @@ Citizen.CreateThread(function()
 			Garage_2_OccupiedSlots[3]["STATE"] = true
 			Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"] = ""
 			Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"] = ""
+		   else
+	local temp = {Garage_1_OccupiedSlots[3]["MODEL"]["MODEL"], Garage_1_OccupiedSlots[3]["MODEL"]["MODELDICT"]}
+			 
+			Garage_2_OccupiedSlots[3]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"]
+			Garage_2_OccupiedSlots[3]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"]
+				
+			Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"] = temp[1]
+			Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"] = temp[2]		   
+		   end
 		  end
 	     end		 
+		else
+		 Vehicle_1_2X = Garage_1_Slot_2.xPos
+		 Vehicle_1_2Y = Garage_1_Slot_2.yPos
 		end
-	    DrawSprite(Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"], Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"], Vehicle_1.xPos, Vehicle_1.yPos, 0.1, 0.1, 0.0, 255, 255, 255, 255) 
+	    DrawSprite(Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"], Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"], Vehicle_1_2X, Vehicle_1_2Y, 0.1, 0.1, 0.0, 255, 255, 255, 255) 
 	   end
 ----------------------------------------------------------------------------------------------	  
 ---------------------------garage 1 slot 3----------------------------------------------------
 ----------------------------------------------------------------------------------------------
 	   if Garage_1_OccupiedSlots[3]["STATE"] then
-	    if MoveTexture then        		
-	     Vehicle_1.xPos = mouseX
-		 Vehicle_1.yPos = mouseY
+	    if MoveGar_1_Slot_3Texture then        		
+	     Vehicle_1_3X = mouseX
+		 Vehicle_1_3Y = mouseY
 	     if Gar_1_Slot_1 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
-		    Vehicle_1.xPos = Garage_1_Slot_1.xPos 
-			Vehicle_1.yPos = Garage_1_Slot_1.yPos
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_1_Slot_3Texture = false
 			Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[3]["MODEL"]["MODEL"]
 			Garage_1_OccupiedSlots[1]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[3]["MODEL"]["MODELDICT"]
 			Garage_1_OccupiedSlots[3]["STATE"] = false
@@ -851,10 +956,8 @@ Citizen.CreateThread(function()
 		  end
 	     end
 	     if Gar_1_Slot_2 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
-		    Vehicle_1.xPos = Garage_1_Slot_2.xPos 
-			Vehicle_1.yPos = Garage_1_Slot_2.yPos
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_1_Slot_3Texture = false
 			Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[3]["MODEL"]["MODEL"]
 			Garage_1_OccupiedSlots[2]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[3]["MODEL"]["MODELDICT"]
 			Garage_1_OccupiedSlots[3]["STATE"] = false
@@ -866,10 +969,10 @@ Citizen.CreateThread(function()
 		  end
 	     end
 	     if Gar_2_Slot_1 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
-		    Vehicle_2.xPos = Garage_2_Slot_1.xPos 
-			Vehicle_2.yPos = Garage_2_Slot_1.yPos
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_1_Slot_3Texture = false
+		    Vehicle_2_1X = Garage_2_Slot_1.xPos 
+			Vehicle_2_1X = Garage_2_Slot_1.yPos
 			Garage_2_OccupiedSlots[1]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[3]["MODEL"]["MODEL"]
 			Garage_2_OccupiedSlots[1]["MODEL"]["MODELDICT"] = Garage_1_OccupiedSlots[3]["MODEL"]["MODELDICT"]
 			Garage_1_OccupiedSlots[3]["STATE"] = false
@@ -880,8 +983,8 @@ Citizen.CreateThread(function()
 		  end
 	     end
 	     if Gar_2_Slot_2 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_1_Slot_3Texture = false
 		    Vehicle_2.xPos = Garage_2_Slot_2.xPos 
 			Vehicle_2.yPos = Garage_2_Slot_2.yPos
 			Garage_2_OccupiedSlots[2]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[3]["MODEL"]["MODEL"]
@@ -894,8 +997,8 @@ Citizen.CreateThread(function()
 		  end
 	     end
 	     if Gar_2_Slot_3 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_1_Slot_3Texture = false
 		    Vehicle_2.xPos = Garage_2_Slot_3.xPos 
 			Vehicle_2.yPos = Garage_2_Slot_3.yPos
 			Garage_2_OccupiedSlots[3]["MODEL"]["MODEL"] = Garage_1_OccupiedSlots[3]["MODEL"]["MODEL"]
@@ -907,20 +1010,23 @@ Citizen.CreateThread(function()
 			Garage_1_OccupiedSlots[3]["MODEL"]["MODELDICT"] = ""
 		  end
 	     end
+		else
+		 Vehicle_1_3X = Garage_1_Slot_3.xPos
+		 Vehicle_1_3Y = Garage_1_Slot_3.yPos
 		end
-	    DrawSprite(Garage_1_OccupiedSlots[3]["MODEL"]["MODELDICT"], Garage_1_OccupiedSlots[3]["MODEL"]["MODEL"], Vehicle_1.xPos, Vehicle_1.yPos, 0.1, 0.1, 0.0, 255, 255, 255, 255) 
+	    DrawSprite(Garage_1_OccupiedSlots[3]["MODEL"]["MODELDICT"], Garage_1_OccupiedSlots[3]["MODEL"]["MODEL"], Vehicle_1_3X, Vehicle_1_3Y, 0.1, 0.1, 0.0, 255, 255, 255, 255) 
 	   end
 	   
 ----------------------------------------------------------------------------------------------	  
 ---------------------------garage 2 slot 1----------------------------------------------------
 ----------------------------------------------------------------------------------------------
 	   if Garage_2_OccupiedSlots[1]["STATE"] then
-	    if MoveTexture then	
-	    Vehicle_2.xPos = mouseX
-		Vehicle_2.yPos = mouseY
+	    if MoveGar_2_Slot_1Texture then	
+	    Vehicle_2_1X = mouseX
+		Vehicle_2_1Y = mouseY
 	     if Gar_2_Slot_2 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_2_Slot_1Texture = false
 		    Vehicle_2.xPos = Garage_2_Slot_2.xPos 
 			Vehicle_2.yPos = Garage_2_Slot_2.yPos
 			Garage_2_OccupiedSlots[2]["MODEL"]["MODEL"] = Garage_2_OccupiedSlots[1]["MODEL"]["MODEL"]
@@ -933,8 +1039,8 @@ Citizen.CreateThread(function()
 		  end
 	     end
 	     if Gar_2_Slot_3 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_2_Slot_3Texture = false
 		    Vehicle_2.xPos = Garage_2_Slot_3.xPos 
 			Vehicle_2.yPos = Garage_2_Slot_3.yPos
 			Garage_2_OccupiedSlots[3]["MODEL"]["MODEL"] = Garage_2_OccupiedSlots[1]["MODEL"]["MODEL"]
@@ -947,8 +1053,8 @@ Citizen.CreateThread(function()
 		  end
 	     end
 	     if Gar_1_Slot_1 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_2_Slot_1Texture = false
 		    Vehicle_1.xPos = Garage_1_Slot_1.xPos 
 			Vehicle_1.yPos = Garage_1_Slot_1.yPos
 			Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"] = Garage_2_OccupiedSlots[1]["MODEL"]["MODEL"]
@@ -961,8 +1067,8 @@ Citizen.CreateThread(function()
 		  end
 	     end
 	     if Gar_1_Slot_2 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_2_Slot_1Texture = false
 		    Vehicle_1.xPos = Garage_1_Slot_2.xPos 
 			Vehicle_1.yPos = Garage_1_Slot_2.yPos
 			Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"] = Garage_2_OccupiedSlots[1]["MODEL"]["MODEL"]
@@ -975,8 +1081,8 @@ Citizen.CreateThread(function()
 		  end
 	     end
 	     if Gar_1_Slot_3 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_2_Slot_1Texture = false
 		    Vehicle_1.xPos = Garage_1_Slot_3.xPos 
 			Vehicle_1.yPos = Garage_1_Slot_3.yPos
 			Garage_1_OccupiedSlots[3]["MODEL"]["MODEL"] = Garage_2_OccupiedSlots[1]["MODEL"]["MODEL"]
@@ -989,19 +1095,19 @@ Citizen.CreateThread(function()
 		  end
 	     end
 		end
-	    DrawSprite(Garage_2_OccupiedSlots[1]["MODEL"]["MODELDICT"], Garage_2_OccupiedSlots[1]["MODEL"]["MODEL"], Vehicle_2.xPos, Vehicle_2.yPos, 0.1, 0.1, 0.0, 255, 255, 255, 255) 
+	    DrawSprite(Garage_2_OccupiedSlots[1]["MODEL"]["MODELDICT"], Garage_2_OccupiedSlots[1]["MODEL"]["MODEL"], Vehicle_2_1X, Vehicle_2_1Y, 0.1, 0.1, 0.0, 255, 255, 255, 255) 
 	   end
 ----------------------------------------------------------------------------------------------	  
 ---------------------------garage 2 slot 2----------------------------------------------------
 ----------------------------------------------------------------------------------------------
 	   if Garage_2_OccupiedSlots[2]["STATE"] then
-	    if MoveTexture then
+	    if MoveGar_2_Slot_2Texture then
          		
-	     Vehicle_2.xPos = mouseX
-		 Vehicle_2.yPos = mouseY
+	     Vehicle_2_2X = mouseX
+		 Vehicle_2_2Y = mouseY
 	     if Gar_2_Slot_1 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_2_Slot_2Texture = false
 		    Vehicle_2.xPos = Garage_2_Slot_1.xPos 
 			Vehicle_2.yPos = Garage_2_Slot_1.yPos
 			Garage_2_OccupiedSlots[1]["MODEL"]["MODEL"] = Garage_2_OccupiedSlots[2]["MODEL"]["MODEL"]
@@ -1014,8 +1120,8 @@ Citizen.CreateThread(function()
 		  end
 	     end
 	     if Gar_2_Slot_3 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_2_Slot_2Texture = false
 		    Vehicle_2.xPos = Garage_2_Slot_3.xPos 
 			Vehicle_2.yPos = Garage_2_Slot_3.yPos
 			Garage_2_OccupiedSlots[3]["MODEL"]["MODEL"] = Garage_2_OccupiedSlots[2]["MODEL"]["MODEL"]
@@ -1029,8 +1135,8 @@ Citizen.CreateThread(function()
 	     end
 		 
 	     if Gar_1_Slot_1 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_2_Slot_2Texture = false
 		    Vehicle_1.xPos = Garage_1_Slot_1.xPos 
 			Vehicle_1.yPos = Garage_1_Slot_1.yPos
 			Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"] = Garage_2_OccupiedSlots[2]["MODEL"]["MODEL"]
@@ -1043,8 +1149,8 @@ Citizen.CreateThread(function()
 		  end
 	     end
 	     if Gar_1_Slot_2 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_2_Slot_2Texture = false
 		    Vehicle_1.xPos = Garage_1_Slot_2.xPos 
 			Vehicle_1.yPos = Garage_1_Slot_2.yPos
 			Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"] = Garage_2_OccupiedSlots[2]["MODEL"]["MODEL"]
@@ -1057,8 +1163,8 @@ Citizen.CreateThread(function()
 		  end
 	     end
 	     if Gar_1_Slot_3 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_2_Slot_2Texture = false
 		    Vehicle_1.xPos = Garage_1_Slot_3.xPos 
 			Vehicle_1.yPos = Garage_1_Slot_3.yPos
 			Garage_1_OccupiedSlots[3]["MODEL"]["MODEL"] = Garage_2_OccupiedSlots[2]["MODEL"]["MODEL"]
@@ -1071,19 +1177,19 @@ Citizen.CreateThread(function()
 		  end
 	     end
 		end
-	    DrawSprite(Garage_2_OccupiedSlots[2]["MODEL"]["MODELDICT"], Garage_2_OccupiedSlots[2]["MODEL"]["MODEL"], Vehicle_2.xPos, Vehicle_2.yPos, 0.1, 0.1, 0.0, 255, 255, 255, 255) 
+	    DrawSprite(Garage_2_OccupiedSlots[2]["MODEL"]["MODELDICT"], Garage_2_OccupiedSlots[2]["MODEL"]["MODEL"], Vehicle_2_2X, Vehicle_2_2Y, 0.1, 0.1, 0.0, 255, 255, 255, 255) 
 	   end
 ----------------------------------------------------------------------------------------------	  
 ---------------------------garage 2 slot 3----------------------------------------------------
 ----------------------------------------------------------------------------------------------
 	   if Garage_2_OccupiedSlots[3]["STATE"] then
-	    if MoveTexture then
+	    if MoveGar_2_Slot_3Texture then
          		
-	     Vehicle_2.xPos = mouseX
-		 Vehicle_2.yPos = mouseY
+	     Vehicle_2_3X = mouseX
+		 Vehicle_2_3Y = mouseY
 	     if Gar_1_Slot_1 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_2_Slot_3Texture = false
 		    Vehicle_1.xPos = Garage_1_Slot_1.xPos 
 			Vehicle_1.yPos = Garage_1_Slot_1.yPos
 			Garage_1_OccupiedSlots[1]["MODEL"]["MODEL"] = Garage_2_OccupiedSlots[3]["MODEL"]["MODEL"]
@@ -1096,8 +1202,8 @@ Citizen.CreateThread(function()
 		  end
 	     end
 	     if Gar_1_Slot_2 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_2_Slot_3Texture = false
 		    Vehicle_1.xPos = Garage_1_Slot_2.xPos 
 			Vehicle_1.yPos = Garage_1_Slot_2.yPos
 			Garage_1_OccupiedSlots[2]["MODEL"]["MODEL"] = Garage_2_OccupiedSlots[3]["MODEL"]["MODEL"]
@@ -1110,8 +1216,8 @@ Citizen.CreateThread(function()
 		  end
 	     end
 	     if Gar_1_Slot_3 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_2_Slot_3Texture = false
 		    Vehicle_1.xPos = Garage_1_Slot_3.xPos 
 			Vehicle_1.yPos = Garage_1_Slot_3.yPos
 			Garage_1_OccupiedSlots[3]["MODEL"]["MODEL"] = Garage_2_OccupiedSlots[3]["MODEL"]["MODEL"]
@@ -1125,8 +1231,8 @@ Citizen.CreateThread(function()
 	     end
 		 
 	     if Gar_2_Slot_1 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_2_Slot_3Texture = false
 		    Vehicle_2.xPos = Garage_2_Slot_1.xPos 
 			Vehicle_2.yPos = Garage_2_Slot_1.yPos
 			Garage_2_OccupiedSlots[1]["MODEL"]["MODEL"] = Garage_2_OccupiedSlots[3]["MODEL"]["MODEL"]
@@ -1139,8 +1245,8 @@ Citizen.CreateThread(function()
 		  end
 	     end
 	     if Gar_2_Slot_2 then 
-	      if IsControlJustPressed(2, 237) then		  
-		   MoveTexture = false
+	      if IsControlJustReleased(2, 237) then		  
+		   MoveGar_2_Slot_3Texture = false
 		    Vehicle_2.xPos = Garage_2_Slot_2.xPos 
 			Vehicle_2.yPos = Garage_2_Slot_2.yPos
 			Garage_2_OccupiedSlots[2]["MODEL"]["MODEL"] = Garage_2_OccupiedSlots[3]["MODEL"]["MODEL"]
@@ -1153,7 +1259,7 @@ Citizen.CreateThread(function()
 		  end
 	     end
 		end
-		DrawSprite(Garage_2_OccupiedSlots[3]["MODEL"]["MODELDICT"], Garage_2_OccupiedSlots[3]["MODEL"]["MODEL"], Vehicle_2.xPos, Vehicle_2.yPos, 0.1, 0.1, 0.0, 255, 255, 255, 255)
+		DrawSprite(Garage_2_OccupiedSlots[3]["MODEL"]["MODELDICT"], Garage_2_OccupiedSlots[3]["MODEL"]["MODEL"], Vehicle_2_3X, Vehicle_2_3Y, 0.1, 0.1, 0.0, 255, 255, 255, 255)
 	   end	      
 	  end 
 	end
